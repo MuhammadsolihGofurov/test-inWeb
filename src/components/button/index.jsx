@@ -40,7 +40,7 @@ const Styled = styled.button`
     width:100%;
     background-color:${Colors?.bg_blue};
     color:${Colors?.text_primary};
-    font-weight:700;
+    font-weight:600;
     transition:all .5s;
     &:hover{
       background:${Colors?.text_grey_6};

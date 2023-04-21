@@ -14,6 +14,7 @@ const Styled = styled.div`
     color:${Colors?.main};
     border-radius:8px;
     overflow:${props => props.label ? '' : 'hidden'};
+    font-weight:600;
     
     input{
         border:${props => props.isFile ? 'none' : `1px solid ${Colors?.text_grey_5}`};

@@ -58,27 +58,27 @@ const Styled = styled.div`
                     background-size:auto 400px;
                 }
                 
-                &.orange{
-                    background-color:rgb(255, 145, 65);
-                }
+                // &.orange{
+                //     background-color:rgb(255, 145, 65);
+                // }
 
-                &.pink{
-                    background-color:rgb(255, 121, 233);
-                }
+                // &.pink{
+                //     background-color:rgb(255, 121, 233);
+                // }
             }
 
             
 
         }
 
-        .btn__dark{
-            transition: all .5s;
-            &:hover{
-                border-color:${Colors?.white};
-                color:${Colors?.white};
-                background:transparent;
-            }
-        }
+        // .btn__dark{
+        //     transition: all .5s;
+        //     &:hover{
+        //         border-color:${Colors?.white};
+        //         color:${Colors?.white};
+        //         background:transparent;
+        //     }
+        // }
         
         &.small{
             min-height:220px;
@@ -91,12 +91,12 @@ const Styled = styled.div`
             &:hover{
                 background-size:auto 250px;
                 
-                &.blue{
-                    background-color:rgb(73, 200, 227);
-                }
-                &.green{
-                    background-color:rgb(59, 156, 148);
-                }
+                // &.blue{
+                //     background-color:rgb(73, 200, 227);
+                // }
+                // &.green{
+                //     background-color:rgb(59, 156, 148);
+                // }
             }
             
             &:nth-child(1){
@@ -120,20 +120,25 @@ const Styled = styled.div`
         &--title{
             font-size:22px;
             padding:0 0 30px 0;
+            font-weight:bold;
+            color:${Colors?.text_primary};
+            @media screen and (max-width:576px){
+                width:50%;
+            }
         }
 
         // hover
         &:hover{
-            .category__item{
-                &--title{
-                    color:${Colors?.white};
-                }
-            }
-            .btn__dark{
-                border-color:${Colors?.text_primary};
-                color:${Colors?.white};
-                background-color:${Colors?.text_primary};
-            }
+            // .category__item{
+            //     &--title{
+            //         color:${Colors?.white};
+            //     }
+            // // }
+            // .btn__dark{
+            //     border-color:${Colors?.text_primary};
+            //     // color:${Colors?.white};
+            //     // background-color:${Colors?.text_primary};
+            // }
         }
 
 
@@ -146,9 +151,9 @@ export default function Categories() {
             <Row>
                 <Col lg={4}>
                     <div className="category__item big orange" style={{ backgroundImage: `url(${img1})` }}>
-                        <h3 className="category__item--title">
+                        <p className="category__item--title">
                             Популярные <br /> футболки
-                        </h3>
+                        </p>
                         <Link to='/category/1'>
                             <Button className='btn__dark'>Смотреть все</Button>
                         </Link>

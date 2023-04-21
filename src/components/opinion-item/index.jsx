@@ -8,6 +8,7 @@ import img from '../../assets/images/opinion.png'
 const Styled = styled.div`
   border:1px solid ${Colors?.text_grey_5};
   padding:30px;
+  border-radius:4px;
 
   @media screen and (max-width:576px){
     padding:20px;
@@ -20,7 +21,7 @@ const Styled = styled.div`
     &__body{
       color:${Colors?.text_primary};
       font-size:14px;
-      font-weight:600;
+      font-weight:500;
       padding:20px 0;
     }
     &__slider{

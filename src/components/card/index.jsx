@@ -28,7 +28,7 @@ const Styled = styled.div`
                 width:100%;
                 height:300px;
                 background-color:${Colors?.text_grey_6};
-                border-radius:6px;
+                border-radius:8px;
                 overflow:hidden;
                 span{
                     display:block !important;
@@ -107,6 +107,7 @@ const Styled = styled.div`
                         .current{
                             color:${Colors?.text_primary};
                             font-size:18px;
+                            font-weight:600;
                         }
                         .old{
                             color:${Colors?.text_secondary};

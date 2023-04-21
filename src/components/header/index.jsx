@@ -18,6 +18,10 @@ const Styled = styled.header`
     width:100%;
     background-color:${Colors?.white};
 
+    @media screen and (max-width:576px){
+        padding:25px 0;
+    }
+
 
     .header__telegram{
         color:${Colors?.header_grey};
@@ -29,6 +33,15 @@ const Styled = styled.header`
     }
 
     .header__main{
+        &--logo{
+            text-align:start;
+            @media screen and (max-width:576px){
+                text-align:center;
+                img{
+                    width:100px;
+                }
+            }
+        }
         &--bars{
             display:none;
             position:relative;
@@ -111,7 +124,7 @@ export default function Header({ ...rest }) {
                             <path fillRule="evenodd" clipRule="evenodd" d="M2 18C2 17.4477 2.44772 17 3 17H21C21.5523 17 22 17.4477 22 18C22 18.5523 21.5523 19 21 19H3C2.44772 19 2 18.5523 2 18Z" fill="#5900E6" />
                         </svg>
                     </Col>
-                    <Col md={2} sm={3} xs={8} style={{ textAlign: 'center' }} className='header__main--logo'>
+                    <Col md={2} sm={3} xs={8} className='header__main--logo'>
                         <Link to={'/'}>
                             <img src={logo} alt="logo" loading='lazy' />
                         </Link>

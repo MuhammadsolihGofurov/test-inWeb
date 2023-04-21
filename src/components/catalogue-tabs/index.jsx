@@ -15,10 +15,10 @@ const Styled = styled.div`
       display:none;
     }
     .tab{
-      min-width:200px;
+      min-width:180px;
       display:flex;
       align-items:center;
-      justify-content:center;
+      justify-content:space-between;
       gap:10px;
       border-radius:4px;
       background-color:${Colors?.bg_blue};
@@ -26,17 +26,21 @@ const Styled = styled.div`
       cursor:pointer;
       font-weight:600;
       transition:all .5s;
+      border:1px solid transparent;
+      user-select:none;
 
       @media screen and (max-width:576px){
-        padding:8px 10px;
-        min-width:220px;
+        padding:4px 10px;
+        // min-width:200px;
+        min-width:210px;
+        justify-content:center;
       }
 
       span{
         padding-top:5px;
       }
 
-      &.active , &:hover{
+      &.active{
         background-color:${Colors?.main};
         color:${Colors?.white};
         svg{
@@ -44,7 +48,17 @@ const Styled = styled.div`
             fill:${Colors?.white};
           }
         }
+        &:hover{
+          border-color:${Colors?.main};
+          color:${Colors?.white};
+        }
       }
+
+      &:hover{
+        border-color:${Colors?.main};
+        color:${Colors?.main};
+      }
+
     }
   }
 `
@@ -61,6 +75,7 @@ export default function CatalogueTabs({ ...rest }) {
               <li
                 key={index}
                 className={`tab ${activeTab === get(tab, 'id') ? 'active' : ''}`}
+                onClick={() => setActiveTab(get(tab, 'id'))}
               >
                 <span dangerouslySetInnerHTML={{ __html: get(tab, 'icon') }} />
                 <p>{get(tab, 'name')}</p>

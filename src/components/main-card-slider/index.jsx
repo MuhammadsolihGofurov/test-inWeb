@@ -29,7 +29,7 @@ const Styled = styled.div`
             border:none;
         }
         @media screen and (max-width:480px){
-            padding:10px 0;
+            padding:10px 0 50px 0;
         }
 
         .swiper{
@@ -50,6 +50,10 @@ const Styled = styled.div`
             }
             @media screen and (max-width:480px){
                 width: 100%;
+                padding:0 25px;
+                .card__image{
+                    height:240px;
+                }
             }
         }
 
@@ -80,6 +84,12 @@ const Styled = styled.div`
             &::after{
                 font-size:1px;
             }
+        }
+        .swiper-button-prev{
+            left:5px;
+        }
+        .swiper-button-next{
+            right:5px;
         }
     }
 

@@ -16,7 +16,7 @@ const Styled = styled.div`
             display:flex;
             align-items:center;
             gap:10px;
-            padding-bottom:16px;
+            padding:10px 0;
             cursor:pointer;
             transition:all .5s;
             .name{
@@ -49,7 +49,7 @@ const Styled = styled.div`
                     height:5px;
                     background-color:${Colors?.text_primary};
                     position:absolute;
-                    top:25%;
+                    top:50%;
                     left:0%;
                     transform:translateY(-50%);
                     border-radius:50%;

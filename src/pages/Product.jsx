@@ -15,6 +15,10 @@ const Styled = styled.div`
   .single__product{
     padding:10px 0 50px 0;
     gap:20px 0;
+
+    @media screen and (max-width: 576px){
+      gap:10px 0;
+    }
     
     &--thumb{
       width:100%;
@@ -41,8 +45,22 @@ const Styled = styled.div`
     .swiper{
       width:100%;
       height:100%;
-      height:580px;
       position:relative;
+      max-height:560px;
+
+      // &.vertical{
+      //   width:100%;
+      //   height:100%;
+      //   overflow:hidden;
+      // }
+      
+      &.horizontal{
+        &-slide{
+          height:580px;
+        }
+
+      }
+
       .swiper-button-prev , .swiper-button-next{
         display:none;
       }
@@ -61,23 +79,39 @@ const Styled = styled.div`
       }
 
       @media screen and (max-width:768px){
-        // padding-bottom:30px;
+        padding-bottom:25px;
+
         .swiper-pagination{
           opacity:1;
         }
         .swiper-pagination-bullet{
-          background-color:${Colors?.main};
+          background-color:${Colors?.text_grey_6};
+          opacity:1;
           &-active{
-            background-color:${Colors?.main};
+            opacity:1;
+            background-color:${Colors?.text_placeholder};
           }
+        }
+
+        .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+          bottom: 0px;
         }
       }
       
       @media screen and (max-width:576px){
-        height:400px;
+        &.horizontal{
+          &-slide{
+            height:400px;
+          }
+        }
+        
       }
       @media screen and (max-width:480px){
-        height:320px;
+        &.horizontal{
+          &-slide{
+            height:300px;
+          }
+        }
       }
     }
 
@@ -172,13 +206,25 @@ const Styled = styled.div`
     // about
     &__about{
       &--body{
-        padding:20px 0 10px 0;
+        padding:20px 0 30px 0;
+        font-weight:400;
       }
       &--list{
-        padding-left:20px ;
         li{
-          list-style:disc;
-          padding-bottom:10px;
+          // list-style:disc;
+          padding-bottom:15px;
+          position:relative;
+          padding-left:20px ;
+          &::before{
+            content: "";
+            position:absolute;
+            top:5px;
+            left:5px;
+            width:4px;
+            height:4px;
+            border-radius:50%;
+            background-color:${Colors?.text_primary};
+          }
         }
       }
     }

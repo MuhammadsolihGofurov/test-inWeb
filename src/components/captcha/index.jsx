@@ -8,7 +8,7 @@ import { Colors } from '../../constants/colors';
 const Styled = styled.div`
     padding:10px;
     border:1px solid ${Colors?.text_grey_5};
-    font-weight:bold;
+    font-weight:500;
 `
 
 export default function Captcha({ ...rest }) {

@@ -18,6 +18,7 @@ const Styled = styled.footer`
         p{
             padding:20px 0;
             font-size:14px;
+            font-weight:600;
             color:${Colors?.text_grey_6};
         }
         h6{
@@ -32,7 +33,7 @@ const Styled = styled.footer`
             }
             a{
                 color:${Colors?.white};
-                font-weight:500;
+                font-weight:600;
             }
         }
     }
@@ -41,10 +42,23 @@ const Styled = styled.footer`
         gap:10px 0;
         @media screen and (max-width:768px){
             padding-top:50px;
+            gap:30px;
         }
         span{
             color:${Colors?.text_placeholder};
             padding-right:10px;
+            @media screen and (max-width:768px){
+                padding-right:20px;
+            }
+        }
+        a.end{
+            display:flex;
+            align-items:center;
+            @media screen and (max-width:768px){
+                span{
+                    padding-right:10px;
+                }
+            }
         }
         .flex{
             justify-content:flex-end;

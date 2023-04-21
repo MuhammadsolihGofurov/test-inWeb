@@ -8,7 +8,7 @@ const Styled = styled.ul`
     text-align:center;
     .lang__menu{
         color:${Colors?.text_secondary};
-        font-weight:bold;
+        font-weight:500;
         cursor: pointer;
         &--more{
             position: absolute;
@@ -49,8 +49,8 @@ export default function Lang({ ...rest }) {
             <li className='lang__menu'>
                 Ru
                 <ul className='lang__menu--more'>
-                    <li>Uz</li>
-                    <li>En</li>
+                    <li>Uzbek</li>
+                    <li>English</li>
                 </ul>
             </li>
         </Styled>

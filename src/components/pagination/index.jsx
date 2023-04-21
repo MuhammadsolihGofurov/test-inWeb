@@ -11,6 +11,9 @@ const Styled = styled.ul`
     svg{
         padding-top:5px;
     }
+    @media screen and (max-width:576px){
+        gap:0;
+    }
     li{
         padding:10px 15px;
         font-weight:500;
@@ -59,7 +62,6 @@ const Styled = styled.ul`
             display:none;
         }
         @media screen and (max-width:576px){
-            padding:5px 10px;
             &.mobileNone{
                 display:none;
             }

@@ -10,7 +10,6 @@ const Styled = styled.div`
     bottom:-1px;
     left:0;
     width:100%;
-    height:80px;
     background-color:${Colors?.white};
     box-shadow:${Shadows?.navbar};
     z-index:998;
@@ -32,6 +31,7 @@ const Styled = styled.div`
         height:100%;
         &--item{
             text-align:center;
+            padding:20px 0;
             p{
                 font-weight:500;
                 font-size:12px;
@@ -72,6 +72,7 @@ const Styled = styled.div`
                 }
                 p{
                     color:${Colors?.text_primary};
+                    font-weight:600;
                 }
                 svg{
                     path{

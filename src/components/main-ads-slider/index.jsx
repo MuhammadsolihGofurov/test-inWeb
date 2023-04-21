@@ -31,14 +31,26 @@ const Styled = styled.div`
     .swiper-slide{
       .mySwiper__item{
         overflow:hidden;
-        border-radius:10px;
         height:100px;
         width:80%;
         display:flex;
         align-items:center;
+        // border-radius:10px;
+        padding: 10px ;
+
+
+
+        img{
+          border-radius:8px ;
+        }
 
         @media screen and (max-width:1200px){
           width:75%;
+        }
+
+        @media screen and (max-width:576px){
+          padding: 10px 0;
+          height:auto;
         }
 
       }
@@ -91,11 +103,15 @@ export default function MainAdsSlider() {
           },
           360: {
             slidesPerView: 2,
-            spaceBetween: -45,
+            spaceBetween: -35,
+          },
+          380: {
+            slidesPerView: 2,
+            spaceBetween: -40,
           },
           576: {
             slidesPerView: 3,
-            spaceBetween: -40,
+            spaceBetween: -35,
           },
           768: {
             slidesPerView: 5,
@@ -111,7 +127,7 @@ export default function MainAdsSlider() {
         className="mySwiper">
         <SwiperSlide>
           <div className='mySwiper__item'>
-            <LazyLoadImage
+            <img
               src={img1}
               effect='blur'
               alt='1'
@@ -120,7 +136,7 @@ export default function MainAdsSlider() {
         </SwiperSlide>
         <SwiperSlide>
           <div className="mySwiper__item">
-            <LazyLoadImage
+            <img
               src={img2}
               effect='blur'
               alt='1'
@@ -129,7 +145,7 @@ export default function MainAdsSlider() {
         </SwiperSlide>
         <SwiperSlide>
           <div className="mySwiper__item">
-            <LazyLoadImage
+            <img
               src={img3}
               effect='blur'
               alt='1'
@@ -138,7 +154,7 @@ export default function MainAdsSlider() {
         </SwiperSlide>
         <SwiperSlide>
           <div className="mySwiper__item">
-            <LazyLoadImage
+            <img
               src={img4}
               effect='blur'
               alt='1'
@@ -147,7 +163,7 @@ export default function MainAdsSlider() {
         </SwiperSlide>
         <SwiperSlide>
           <div className="mySwiper__item">
-            <LazyLoadImage
+            <img
               src={img5}
               effect='blur'
               alt='1'
@@ -156,7 +172,7 @@ export default function MainAdsSlider() {
         </SwiperSlide>
         <SwiperSlide>
           <div className="mySwiper__item">
-            <LazyLoadImage
+            <img
               src={img1}
               effect='blur'
               alt='1'

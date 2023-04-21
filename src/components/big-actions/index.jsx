@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
 import { Products } from '../../mock/products';
 import Card from '../card';
@@ -12,6 +12,7 @@ import { get } from 'lodash';
 
 const Styled = styled.div`
   padding:50px 0;
+  position:relative;
 
   
   @media screen and (max-width:1200px){
@@ -38,6 +39,13 @@ const Styled = styled.div`
         transform:rotate(180deg);
     }
   }
+  .mySwiper{
+    .swiper-button-next , .swiper-button-prev{
+      display:none;
+      opacity:0;
+      visibility:hidden;
+    }
+  }
   .swiper-button-next , .swiper-button-prev{
     width:48px;
     height:48px;
@@ -47,6 +55,8 @@ const Styled = styled.div`
     justify-content:center;
     align-items:center;
     background-color:${Colors?.white};
+    top:50%;
+    transform:translateY(-50%);
     &::after{
         font-size:1px;
     }
@@ -54,6 +64,13 @@ const Styled = styled.div`
   .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
     opacity:0;
   }
+  .swiper-button-next{
+    right:-25px;
+  }
+  .swiper-button-prev{
+    left:-25px;
+  }
+
   .big__action{
     &--card{
       @media screen and (max-width:576px){
@@ -67,6 +84,17 @@ const Styled = styled.div`
 `;
 
 export default function BigActions({ ...rest }) {
+  const [swiperRef, setSwiperRef] = useState(null);
+
+  const prevHandler = useCallback(() => {
+    swiperRef.slidePrev();
+  })
+
+  const nextHandler = useCallback(() => {
+    swiperRef.slideNext();
+  })
+
+
   return (
     <Styled>
       <Swiper
@@ -97,14 +125,15 @@ export default function BigActions({ ...rest }) {
           },
         }}
         navigation={true}
-        modules={[Navigation, Autoplay]}
+        modules={[Autoplay]}
+        onSwiper={(swiper) => setSwiperRef(swiper)}
         className="mySwiper">
         {
           Products?.map((product, index) => {
             return (
               <SwiperSlide key={index}>
                 <div className="big__action--card">
-                  <Link to={`/product/${get(product , 'id')}`}>
+                  <Link to={`/product/${get(product, 'id')}`}>
                     <Card item={product} isGrid />
                   </Link>
                 </div>
@@ -113,6 +142,8 @@ export default function BigActions({ ...rest }) {
           })
         }
       </Swiper>
+      <div className="swiper-button-prev" onClick={prevHandler}></div>
+      <div className="swiper-button-next" onClick={nextHandler}></div>
     </Styled>
   )
 }
